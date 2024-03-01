@@ -1,5 +1,4 @@
 using DoctorAppointment.Entities.Doctors;
-using DoctorAppointment.Persistence.EF;
 using DoctorAppointment.Services.Doctors.Contracts;
 using DoctorAppointment.Services.Doctors.Contracts.Dto;
 using Microsoft.EntityFrameworkCore;

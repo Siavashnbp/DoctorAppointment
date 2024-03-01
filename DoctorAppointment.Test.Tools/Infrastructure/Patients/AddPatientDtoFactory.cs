@@ -1,21 +1,19 @@
-﻿using DoctorAppointment.Services.Doctors.Contracts.Dto;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DoctorAppointment.Test.Tools.Infrastructure.Doctors
+namespace DoctorAppointment.Test.Tools.Infrastructure.Patients
 {
-    public static class AddDoctorDtoFactory
+    public static class AddPatientDtoFactory
     {
-        public static AddDoctorDto Create()
+        public static AddPatientDto Create()
         {
-            return new AddDoctorDto
+            return new AddPatientDto
             {
                 FirstName = "dummy-first-name",
                 LastName = "dummy-last-name",
-                Field = "dummy-field",
                 NationalCode = "0000000000"
             };
         }

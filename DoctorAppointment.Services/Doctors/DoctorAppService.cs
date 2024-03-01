@@ -24,7 +24,7 @@ public class DoctorAppService : DoctorService
         var nationalCodeExists = _repository.NationalCodeExists(dto.NationalCode);
         if (nationalCodeExists)
         {
-            throw new NationalCodeAlreadyExistsException();
+            throw new DoctorNationalCodeExistsException();
         }
         var doctor = new Doctor
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoctorAppointment.Test.Tools.Infrastructure.Patients;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace DoctorAppointment.Services.Patients.Contracts
 {
     public interface PatientServices
     {
+        Task Add(AddPatientDto dto);
     }
 }
