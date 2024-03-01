@@ -33,5 +33,17 @@ namespace DoctorAppointment.Test.Tools.Infrastructure.Patients
             _repository.Add(patient);
             await _unitOfWork.Complete();
         }
+
+        public async Task Update(int id, UpdatePatientDto dto)
+        {
+            var patient = await _repository.FindById(id);
+            if (patient is null)
+            {
+                throw new PatientDoesNotExistException();
+            }
+            patient.FirstName = dto.FirstName;
+            patient.LastName = dto.LastName;
+            await _unitOfWork.Complete();
+        }
     }
 }

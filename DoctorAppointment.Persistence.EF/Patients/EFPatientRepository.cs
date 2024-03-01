@@ -1,6 +1,7 @@
 ﻿using DoctorAppointment.Entities.Patients;
 using DoctorAppointment.Services.Patients.Contracts;
 using DoctorAppointment.Test.Tools.Infrastructure.Patients;
+using Microsoft.EntityFrameworkCore;
 
 namespace DoctorAppointment.Persistence.EF.Patients
 {
@@ -20,7 +21,12 @@ namespace DoctorAppointment.Persistence.EF.Patients
 
         public bool NationalCodeExists(string nationalCode)
         {
-            return _context.Patients.Any(_=>_.NationalCode == nationalCode);
+            return _context.Patients.Any(_ => _.NationalCode == nationalCode);
+        }
+
+        async Task<Patient?> PatientRepository.FindById(int id)
+        {
+            return await _context.Patients.FirstOrDefaultAsync(_ => _.Id == id);
         }
     }
 }

@@ -11,6 +11,7 @@ namespace DoctorAppointment.Services.Patients.Contracts
     public interface PatientRepository
     {
         void Add(Patient patient);
+        Task<Patient?> FindById(int id);
         bool NationalCodeExists(string nationalCode);
     }
 }

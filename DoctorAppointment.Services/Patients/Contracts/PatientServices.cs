@@ -10,5 +10,6 @@ namespace DoctorAppointment.Services.Patients.Contracts
     public interface PatientServices
     {
         Task Add(AddPatientDto dto);
+        Task Update(int id, UpdatePatientDto dto);
     }
 }
