@@ -61,7 +61,7 @@ public class DoctorServiceTests
 
         var actual = async () => await sut.Add(addDto);
 
-        await actual.Should().ThrowExactlyAsync<NationalCodeAlreadyExistsException>();
+        await actual.Should().ThrowExactlyAsync<DoctorNationalCodeExistsException>();
     }
     [Fact]
     public async Task GetAll_retrieves_all_doctors_properly()
